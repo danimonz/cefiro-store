@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1",
+    "slug": "estructura-art-print",
+    "name": "Estructura",
+    "subtitle": "Art Print",
+    "price": 25,
+    "description": "A surrealist black and white print that interrogates the architecture of thought. Intricate linework dissolves into negative space — the structure is both the message and the medium. 12×18 inches, archival quality paper.",
+    "dimensions": "12 × 18 inches",
+    "category": "prints",
+    "image": "/images/estructura.svg",
+    "images": ["/images/estructura.svg"],
+    "featured": true
+  },
+  {
+    "id": "2",
+    "slug": "cefiro-essentials-tee",
+    "name": "Cefiro Essentials Tee",
+    "subtitle": "Heavyweight Cotton",
+    "price": 35,
+    "description": "280gsm heavyweight cotton. Pre-shrunk. Minimal embroidered logo on the chest — small enough to be subtle, deliberate enough to mean something. The kind of shirt you reach for without thinking. Black.",
+    "dimensions": "Sizes: S, M, L, XL, XXL",
+    "category": "apparel",
+    "image": "/images/tee.svg",
+    "images": ["/images/tee.svg"],
+    "featured": true
+  },
+  {
+    "id": "3",
+    "slug": "copal-incense-pack",
+    "name": "Copal Incense Pack",
+    "subtitle": "Traditional Mexican Copal",
+    "price": 12,
+    "description": "Traditional Mexican copal resin hand-rolled into 10 sticks. Copal is the scent of ceremony — of altars, of memory, of the living honoring the dead. Burn one before you create. Let the smoke carry it.",
+    "dimensions": "10 sticks per pack",
+    "category": "lifestyle",
+    "image": "/images/copal.svg",
+    "images": ["/images/copal.svg"],
+    "featured": true
+  },
+  {
+    "id": "4",
+    "slug": "la-maquina-poster",
+    "name": "La Máquina",
+    "subtitle": "Limited Poster",
+    "price": 30,
+    "description": "Art Deco geometry meets Chicano lettering. Bold. Symmetrical. Built like a declaration. 18×24 inches. The machine doesn't stop — neither do you.",
+    "dimensions": "18 × 24 inches",
+    "category": "prints",
+    "image": "/images/lamaquina.svg",
+    "images": ["/images/lamaquina.svg"],
+    "featured": true
+  },
+  {
+    "id": "5",
+    "slug": "cefiro-lighter",
+    "name": "Cefiro Lighter",
+    "subtitle": "Matte Black / Gold",
+    "price": 8,
+    "description": "Matte black. Gold logo. Butane. Lights on the first strike. The smallest object in a room can say the most about the person carrying it.",
+    "dimensions": "Standard size",
+    "category": "lifestyle",
+    "image": "/images/lighter.svg",
+    "images": ["/images/lighter.svg"],
+    "featured": false
+  }
+]
