@@ -1,14 +1,8 @@
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { CartProvider } from './lib/cart-context'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="min-h-screen flex flex-col">
         <CartProvider>
           <Navbar />

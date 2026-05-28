@@ -35,28 +35,32 @@ export default async function ProductPage({ params }) {
 
   if (!product) notFound()
 
-  // Related: same category, or just others, exclude current
-  const related = products
-    .filter(p => p.id !== product.id && p.category === product.category)
-    .slice(0, 3)
+  const related = products.filter(p => p.id !== product.id && p.category === product.category).slice(0, 3)
   const others = products.filter(p => p.id !== product.id).slice(0, 3)
   const relatedProducts = related.length > 0 ? related : others
 
   return (
-    <div className="min-h-screen pt-24 pb-32">
+    <div style={{ minHeight: '100vh', paddingTop: '80px', paddingBottom: '80px' }}>
 
-      {/* ── Product Detail ───────────────────────────────────── */}
-      <div className="max-w-5xl mx-auto px-8">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-
-          {/* Left: Image */}
+      {/* ── Product detail ───────────────────────────────────── */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 32px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '60px',
+            alignItems: 'start',
+          }}
+        >
+          {/* Left: image */}
           <FadeIn>
             <div
-              className="relative w-full"
               style={{
-                aspectRatio: '2/3',
-                background: '#111111',
-                border: '1px solid rgba(201,168,76,0.1)',
+                position: 'relative',
+                width: '100%',
+                paddingBottom: '100%',
+                background: '#E2E2E2',
+                overflow: 'hidden',
               }}
             >
               <Image
@@ -64,87 +68,117 @@ export default async function ProductPage({ params }) {
                 alt={product.name}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain p-10"
+                style={{ objectFit: 'contain', padding: '10%' }}
                 priority
               />
             </div>
           </FadeIn>
 
-          {/* Right: Info */}
-          <div className="md:pt-8 md:sticky md:top-24">
+          {/* Right: info */}
+          <div style={{ paddingTop: '8px', position: 'sticky', top: '76px' }}>
+
             {/* Category */}
             <FadeIn>
               <p
-                className="text-[9px] tracking-[0.4em] uppercase mb-4"
-                style={{ color: '#C9A84C' }}
+                style={{
+                  fontSize: '10px',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(26,26,26,0.45)',
+                  marginBottom: '16px',
+                  fontWeight: 400,
+                }}
               >
                 {product.category}
               </p>
             </FadeIn>
 
             {/* Name */}
-            <FadeIn delay={80}>
+            <FadeIn delay={60}>
               <h1
-                className="font-display leading-tight mb-1"
-                style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#F5F0E8' }}
+                style={{
+                  fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                  fontWeight: 400,
+                  letterSpacing: '0.03em',
+                  color: '#1a1a1a',
+                  lineHeight: 1.2,
+                  marginBottom: '20px',
+                }}
               >
                 {product.name}
               </h1>
-              {product.subtitle && (
-                <p
-                  className="text-[10px] tracking-[0.25em] uppercase mb-6"
-                  style={{ color: '#F5F0E8', opacity: 0.4 }}
-                >
-                  {product.subtitle}
-                </p>
-              )}
             </FadeIn>
 
             {/* Price */}
-            <FadeIn delay={120}>
+            <FadeIn delay={100}>
               <p
-                className="font-display text-3xl mb-8"
-                style={{ color: '#C9A84C' }}
+                style={{
+                  fontSize: '15px',
+                  fontWeight: 300,
+                  color: '#1a1a1a',
+                  opacity: 0.6,
+                  marginBottom: '28px',
+                }}
               >
                 ${product.price}
               </p>
             </FadeIn>
 
-            {/* Gold rule */}
-            <div className="gold-rule mb-8" />
+            {/* Divider */}
+            <div style={{ height: '1px', background: 'rgba(0,0,0,0.06)', marginBottom: '28px' }} />
 
             {/* Description */}
-            <FadeIn delay={160}>
+            <FadeIn delay={140}>
               <p
-                className="text-sm leading-7 mb-10"
-                style={{ color: '#F5F0E8', opacity: 0.65, fontFamily: 'var(--font-inter)' }}
+                style={{
+                  fontSize: '13px',
+                  lineHeight: 1.8,
+                  color: '#1a1a1a',
+                  opacity: 0.6,
+                  marginBottom: '28px',
+                  fontWeight: 300,
+                }}
               >
                 {product.description}
               </p>
             </FadeIn>
 
-            {/* Dimensions / Details */}
+            {/* Dimensions */}
             {product.dimensions && (
-              <FadeIn delay={200}>
+              <FadeIn delay={180}>
                 <div
-                  className="text-[9px] tracking-[0.25em] uppercase mb-10 pb-6"
-                  style={{ color: '#F5F0E8', opacity: 0.35, borderBottom: '1px solid rgba(201,168,76,0.1)' }}
+                  style={{
+                    fontSize: '10px',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(26,26,26,0.35)',
+                    fontWeight: 400,
+                    paddingBottom: '24px',
+                    borderBottom: '1px solid rgba(0,0,0,0.06)',
+                    marginBottom: '28px',
+                  }}
                 >
                   {product.dimensions}
                 </div>
               </FadeIn>
             )}
 
-            {/* Add to Cart */}
-            <FadeIn delay={240}>
+            {/* Add to cart */}
+            <FadeIn delay={220}>
               <AddToCart product={product} />
             </FadeIn>
 
             {/* Fine print */}
-            <FadeIn delay={280}>
+            <FadeIn delay={260}>
               <p
-                className="text-[9px] tracking-[0.15em] text-center mt-4"
-                style={{ color: '#F5F0E8', opacity: 0.2 }}
+                style={{
+                  fontSize: '10px',
+                  textAlign: 'center',
+                  color: 'rgba(26,26,26,0.22)',
+                  marginTop: '12px',
+                  fontWeight: 300,
+                  letterSpacing: '0.04em',
+                }}
               >
                 Free shipping on orders over $50
               </p>
@@ -153,25 +187,40 @@ export default async function ProductPage({ params }) {
         </div>
       </div>
 
-      {/* ── Related Products ──────────────────────────────────── */}
+      {/* ── Related products ─────────────────────────────────── */}
       {relatedProducts.length > 0 && (
-        <section className="max-w-5xl mx-auto px-8 mt-28">
-          <FadeIn>
-            <div className="flex items-center gap-6 mb-12">
-              <div className="flex-1 gold-rule" />
-              <h2
-                className="font-display text-xs tracking-[0.4em] uppercase shrink-0"
-                style={{ color: '#C9A84C' }}
-              >
-                You May Also Like
-              </h2>
-              <div className="flex-1 gold-rule" />
-            </div>
-          </FadeIn>
+        <section
+          style={{
+            maxWidth: '1200px',
+            margin: '80px auto 0',
+            padding: '0 32px',
+          }}
+        >
+          {/* Section label */}
+          <p
+            style={{
+              fontSize: '10px',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'rgba(26,26,26,0.35)',
+              fontWeight: 400,
+              marginBottom: '24px',
+              paddingTop: '40px',
+              borderTop: '1px solid rgba(0,0,0,0.06)',
+            }}
+          >
+            You may also like
+          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '20px',
+            }}
+          >
             {relatedProducts.map((p, i) => (
-              <FadeIn key={p.id} delay={i * 100}>
+              <FadeIn key={p.id} delay={i * 80}>
                 <ProductCard product={p} />
               </FadeIn>
             ))}

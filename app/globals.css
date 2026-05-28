@@ -1,45 +1,31 @@
 @import "tailwindcss";
 
-/* ─── Cefiro Studios Design Tokens ─────────────────────────────── */
+/* ─── Design Tokens ─────────────────────────────────────────────── */
 @theme inline {
-  --color-black:      #0A0A0A;
-  --color-cream:      #F5F0E8;
-  --color-gold:       #C9A84C;
-  --color-brass:      #B5924C;
-  --color-burgundy:   #6B1D2A;
-  --color-forest:     #2D4A3E;
-  --color-surface:    #111111;
-  --color-border:     #1E1E1E;
-
-  --font-display: var(--font-playfair);
-  --font-sans:    var(--font-inter);
+  --font-sans: var(--font-inter);
+  --color-bg:   #EFEFEF;
+  --color-tile: #E2E2E2;
+  --color-text: #1a1a1a;
 }
 
 /* ─── Base Reset ────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: #0A0A0A;
-  color: #F5F0E8;
+  background-color: #EFEFEF;
+  color: #1a1a1a;
   font-family: var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Typography Utilities ──────────────────────────────────────── */
-.font-display {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
-}
-
-/* ─── Scroll-triggered fade-in ──────────────────────────────────── */
+/* ─── Page-load fade-up ─────────────────────────────────────────── */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -47,35 +33,19 @@ body {
   }
 }
 
-.fade-up {
-  animation: fadeUp 0.7s ease forwards;
+/* ─── Product card hover ────────────────────────────────────────── */
+.product-card-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.fade-up-delay-1 { animation-delay: 0.1s; }
-.fade-up-delay-2 { animation-delay: 0.2s; }
-.fade-up-delay-3 { animation-delay: 0.3s; }
-.fade-up-delay-4 { animation-delay: 0.4s; }
-.fade-up-delay-5 { animation-delay: 0.5s; }
-
-/* ─── Gold accent line ──────────────────────────────────────────── */
-.gold-rule {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #C9A84C 30%, #C9A84C 70%, transparent);
-  opacity: 0.4;
+.product-card:hover .product-card-img {
+  transform: scale(1.04);
 }
 
-/* ─── Art Deco border utility ───────────────────────────────────── */
-.deco-border {
-  border: 1px solid rgba(201, 168, 76, 0.2);
-  outline: 1px solid rgba(201, 168, 76, 0.07);
-  outline-offset: 4px;
-}
+/* ─── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #EFEFEF; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.1); border-radius: 2px; }
 
-/* ─── Custom scrollbar ──────────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0A0A0A; }
-::-webkit-scrollbar-thumb { background: #C9A84C; opacity: 0.4; border-radius: 2px; }
-
-/* ─── Selection color ───────────────────────────────────────────── */
-::selection { background: rgba(201, 168, 76, 0.2); color: #F5F0E8; }
+/* ─── Selection ─────────────────────────────────────────────────── */
+::selection { background: rgba(26, 26, 26, 0.1); color: #1a1a1a; }

@@ -6,119 +6,182 @@ import { useCart } from '../lib/cart-context'
 
 export default function CartPageClient() {
   const { items, subtotal, removeItem, updateQty } = useCart()
-
   const isEmpty = items.length === 0
 
   return (
-    <div className="min-h-screen pt-28 pb-32 px-8">
-      <div className="max-w-2xl mx-auto">
+    <div
+      style={{
+        minHeight: '100vh',
+        paddingTop: '100px',
+        paddingBottom: '80px',
+        paddingLeft: '32px',
+        paddingRight: '32px',
+      }}
+    >
+      <div style={{ maxWidth: '640px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div className="mb-16">
+        <div style={{ marginBottom: '48px' }}>
           <p
-            className="text-[9px] tracking-[0.5em] uppercase mb-3"
-            style={{ color: '#C9A84C' }}
+            style={{
+              fontSize: '10px',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'rgba(26,26,26,0.35)',
+              fontWeight: 400,
+              marginBottom: '12px',
+            }}
           >
             Cefiro Studios
           </p>
           <h1
-            className="font-display leading-none"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', color: '#F5F0E8', letterSpacing: '0.05em' }}
+            style={{
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: 400,
+              letterSpacing: '0.03em',
+              color: '#1a1a1a',
+              lineHeight: 1.1,
+            }}
           >
             Your Cart
           </h1>
-          <div className="gold-rule mt-6 max-w-[60px]" />
+          <div style={{ height: '1px', background: 'rgba(0,0,0,0.06)', marginTop: '24px' }} />
         </div>
 
         {isEmpty ? (
-          /* ── Empty State ────────────────────────────────────── */
-          <div className="text-center py-24">
+          /* ── Empty state ──────────────────────────────────── */
+          <div style={{ textAlign: 'center', paddingTop: '80px', paddingBottom: '80px' }}>
             <p
-              className="font-display text-2xl mb-4"
-              style={{ color: '#F5F0E8', opacity: 0.3 }}
+              style={{
+                fontSize: '22px',
+                fontWeight: 300,
+                color: 'rgba(26,26,26,0.3)',
+                marginBottom: '10px',
+              }}
             >
               Nothing here yet.
             </p>
             <p
-              className="text-[10px] tracking-[0.2em] uppercase mb-12"
-              style={{ color: '#F5F0E8', opacity: 0.2 }}
+              style={{
+                fontSize: '10px',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'rgba(26,26,26,0.2)',
+                fontWeight: 400,
+                marginBottom: '40px',
+              }}
             >
               Your cart is empty
             </p>
             <Link
               href="/products"
-              className="text-[10px] tracking-[0.35em] uppercase px-10 py-4 transition-all duration-300 inline-block"
               style={{
-                color: '#0A0A0A',
-                background: '#C9A84C',
+                display: 'inline-block',
+                padding: '12px 36px',
+                fontSize: '11px',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                background: '#1a1a1a',
+                color: '#EFEFEF',
+                textDecoration: 'none',
+                fontWeight: 400,
               }}
             >
               Start Shopping
             </Link>
           </div>
         ) : (
-          /* ── Cart Items ─────────────────────────────────────── */
+          /* ── Cart items ───────────────────────────────────── */
           <>
-            <div
-              className="divide-y"
-              style={{ borderTop: '1px solid rgba(201,168,76,0.12)', borderColor: 'rgba(201,168,76,0.12)' }}
-            >
-              {items.map(item => (
+            <div>
+              {items.map((item, i) => (
                 <CartItem
                   key={item.id}
                   item={item}
+                  isLast={i === items.length - 1}
                   onRemove={() => removeItem(item.id)}
                   onQtyChange={qty => updateQty(item.id, qty)}
                 />
               ))}
             </div>
 
-            {/* ── Summary ─────────────────────────────────────── */}
-            <div
-              className="mt-10 pt-8"
-              style={{ borderTop: '1px solid rgba(201,168,76,0.2)' }}
-            >
-              <div className="flex justify-between items-baseline mb-4">
+            {/* Summary */}
+            <div style={{ paddingTop: '28px', borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '8px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'baseline',
+                  marginBottom: '8px',
+                }}
+              >
                 <span
-                  className="text-[10px] tracking-[0.3em] uppercase"
-                  style={{ color: '#F5F0E8', opacity: 0.4 }}
+                  style={{
+                    fontSize: '11px',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(26,26,26,0.4)',
+                    fontWeight: 400,
+                  }}
                 >
                   Subtotal
                 </span>
                 <span
-                  className="font-display text-2xl"
-                  style={{ color: '#C9A84C' }}
+                  style={{
+                    fontSize: '18px',
+                    fontWeight: 300,
+                    color: '#1a1a1a',
+                  }}
                 >
                   ${subtotal.toFixed(2)}
                 </span>
               </div>
               <p
-                className="text-[9px] tracking-[0.15em] mb-8"
-                style={{ color: '#F5F0E8', opacity: 0.25 }}
+                style={{
+                  fontSize: '10px',
+                  color: 'rgba(26,26,26,0.25)',
+                  fontWeight: 300,
+                  marginBottom: '24px',
+                  letterSpacing: '0.02em',
+                }}
               >
                 Shipping calculated at checkout. Taxes included where applicable.
               </p>
 
-              {/* Checkout button — disabled, coming soon */}
+              {/* Checkout — disabled */}
               <button
                 disabled
-                className="w-full py-4 text-[11px] tracking-[0.35em] uppercase mb-4 cursor-not-allowed"
                 style={{
-                  background: 'rgba(201,168,76,0.15)',
-                  color: '#C9A84C',
-                  border: '1px solid rgba(201,168,76,0.3)',
-                  opacity: 0.7,
+                  width: '100%',
+                  padding: '14px 0',
+                  fontSize: '11px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  fontWeight: 400,
+                  background: 'rgba(26,26,26,0.15)',
+                  color: 'rgba(26,26,26,0.4)',
+                  border: 'none',
+                  cursor: 'not-allowed',
+                  marginBottom: '16px',
                 }}
                 title="Stripe checkout coming soon"
               >
                 Checkout — Coming Soon
               </button>
 
-              {/* Continue shopping */}
               <Link
                 href="/products"
-                className="block text-center text-[9px] tracking-[0.3em] uppercase py-3 transition-opacity hover:opacity-80"
-                style={{ color: '#F5F0E8', opacity: 0.35 }}
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  fontSize: '10px',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(26,26,26,0.35)',
+                  textDecoration: 'none',
+                  fontWeight: 400,
+                  padding: '10px 0',
+                }}
               >
                 ← Continue Shopping
               </Link>
@@ -130,81 +193,111 @@ export default function CartPageClient() {
   )
 }
 
-function CartItem({ item, onRemove, onQtyChange }) {
+function CartItem({ item, isLast, onRemove, onQtyChange }) {
   return (
     <div
-      className="flex gap-6 py-6"
-      style={{ borderColor: 'rgba(201,168,76,0.1)' }}
+      style={{
+        display: 'flex',
+        gap: '20px',
+        paddingTop: '24px',
+        paddingBottom: '24px',
+        borderBottom: isLast ? 'none' : '1px solid rgba(0,0,0,0.06)',
+      }}
     >
       {/* Thumbnail */}
-      <Link href={`/products/${item.slug}`} className="shrink-0">
+      <Link href={`/products/${item.slug}`} style={{ flexShrink: 0, lineHeight: 0 }}>
         <div
-          className="relative w-20 h-28"
-          style={{ background: '#111111', border: '1px solid rgba(201,168,76,0.1)' }}
+          style={{
+            position: 'relative',
+            width: '72px',
+            height: '72px',
+            background: '#E2E2E2',
+          }}
         >
           <Image
             src={item.image}
             alt={item.name}
             fill
-            sizes="80px"
-            className="object-contain p-2"
+            sizes="72px"
+            style={{ objectFit: 'contain', padding: '8px' }}
           />
         </div>
       </Link>
 
       {/* Info */}
-      <div className="flex-1 min-w-0">
-        <div className="flex justify-between items-start gap-4 mb-1">
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '4px' }}>
           <Link
             href={`/products/${item.slug}`}
-            className="font-display text-base leading-tight hover:text-[#C9A84C] transition-colors"
-            style={{ color: '#F5F0E8' }}
+            style={{
+              fontSize: '12px',
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+              fontWeight: 400,
+              color: '#1a1a1a',
+              textDecoration: 'none',
+            }}
           >
             {item.name}
           </Link>
-          <span
-            className="font-sans text-sm shrink-0"
-            style={{ color: '#C9A84C' }}
-          >
+          <span style={{ fontSize: '12px', fontWeight: 300, color: '#1a1a1a', opacity: 0.6, flexShrink: 0 }}>
             ${(item.price * item.qty).toFixed(2)}
           </span>
         </div>
 
-        {item.subtitle && (
-          <p
-            className="text-[9px] tracking-[0.2em] uppercase mb-4"
-            style={{ color: '#F5F0E8', opacity: 0.35 }}
-          >
-            {item.subtitle}
-          </p>
-        )}
-
         {/* Qty + Remove */}
-        <div className="flex items-center gap-4 mt-3">
-          {/* Quantity selector */}
-          <div
-            className="flex items-center"
-            style={{ border: '1px solid rgba(201,168,76,0.2)' }}
-          >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginTop: '12px' }}>
+          {/* Stepper */}
+          <div style={{ display: 'flex', alignItems: 'center', border: '1px solid rgba(0,0,0,0.12)' }}>
             <button
               onClick={() => onQtyChange(item.qty - 1)}
-              className="w-8 h-8 flex items-center justify-center text-sm transition-colors hover:bg-[rgba(201,168,76,0.1)]"
-              style={{ color: '#F5F0E8', opacity: 0.6 }}
               aria-label="Decrease quantity"
+              style={{
+                width: '28px',
+                height: '28px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '14px',
+                color: 'rgba(26,26,26,0.5)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                lineHeight: 1,
+              }}
             >
               −
             </button>
             <span
-              className="w-8 h-8 flex items-center justify-center text-xs"
-              style={{ color: '#F5F0E8' }}
+              style={{
+                width: '28px',
+                height: '28px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '11px',
+                color: '#1a1a1a',
+                fontWeight: 400,
+              }}
             >
               {item.qty}
             </span>
             <button
               onClick={() => onQtyChange(item.qty + 1)}
-              className="w-8 h-8 flex items-center justify-center text-sm transition-colors hover:bg-[rgba(201,168,76,0.1)]"
-              style={{ color: '#F5F0E8', opacity: 0.6 }}
               aria-label="Increase quantity"
+              style={{
+                width: '28px',
+                height: '28px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '14px',
+                color: 'rgba(26,26,26,0.5)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                lineHeight: 1,
+              }}
             >
               +
             </button>
@@ -213,8 +306,17 @@ function CartItem({ item, onRemove, onQtyChange }) {
           {/* Remove */}
           <button
             onClick={onRemove}
-            className="text-[8px] tracking-[0.2em] uppercase transition-colors hover:text-[#C9A84C]"
-            style={{ color: '#F5F0E8', opacity: 0.3 }}
+            style={{
+              fontSize: '9px',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: 'rgba(26,26,26,0.3)',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 400,
+              padding: 0,
+            }}
           >
             Remove
           </button>

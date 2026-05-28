@@ -9,18 +9,38 @@ export default function CartIcon() {
   return (
     <Link
       href="/cart"
-      className="relative flex items-center gap-2 text-[10px] tracking-[0.25em] text-[#F5F0E8] opacity-60 hover:opacity-100 transition-opacity uppercase"
+      className="relative flex items-center"
+      style={{ color: '#1a1a1a', lineHeight: 0 }}
+      aria-label={`Cart${count > 0 ? `, ${count} item${count !== 1 ? 's' : ''}` : ''}`}
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 01-8 0"/>
+      <svg width="15" height="17" viewBox="0 0 20 22" fill="none">
+        <path
+          d="M1 6H19V20C19 20.5523 18.5523 21 18 21H2C1.44772 21 1 20.5523 1 20V6Z"
+          stroke="#1a1a1a"
+          strokeWidth="1.3"
+        />
+        <path
+          d="M6 6V4C6 2.34315 7.34315 1 9 1H11C12.6569 1 14 2.34315 14 4V6"
+          stroke="#1a1a1a"
+          strokeWidth="1.3"
+        />
       </svg>
-      <span className="hidden md:inline">Cart</span>
+
       {count > 0 && (
         <span
-          className="absolute -top-2 -right-2 w-4 h-4 rounded-full text-[9px] flex items-center justify-center font-sans"
-          style={{ background: '#C9A84C', color: '#0A0A0A' }}
+          className="absolute flex items-center justify-center"
+          style={{
+            width: '14px',
+            height: '14px',
+            borderRadius: '50%',
+            background: '#1a1a1a',
+            color: '#EFEFEF',
+            fontSize: '8px',
+            fontWeight: 400,
+            top: '-6px',
+            right: '-8px',
+            lineHeight: 1,
+          }}
         >
           {count}
         </span>

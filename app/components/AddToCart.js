@@ -16,15 +16,21 @@ export default function AddToCart({ product }) {
   return (
     <button
       onClick={handleAdd}
-      className="w-full py-4 text-[11px] tracking-[0.35em] uppercase transition-all duration-300 relative overflow-hidden"
       style={{
-        background: state === 'added' ? 'transparent' : '#C9A84C',
-        color: state === 'added' ? '#C9A84C' : '#0A0A0A',
-        border: state === 'added' ? '1px solid #C9A84C' : '1px solid transparent',
-        letterSpacing: '0.35em',
+        width: '100%',
+        padding: '14px 0',
+        fontSize: '11px',
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        fontWeight: 400,
+        background: state === 'added' ? 'transparent' : '#1a1a1a',
+        color: state === 'added' ? '#1a1a1a' : '#EFEFEF',
+        border: state === 'added' ? '1px solid rgba(0,0,0,0.2)' : '1px solid transparent',
+        cursor: 'pointer',
+        transition: 'all 0.2s ease',
       }}
     >
-      {state === 'added' ? '✓ Added to Cart' : 'Add to Cart'}
+      {state === 'added' ? '✓ Added' : 'Add to Cart'}
     </button>
   )
 }

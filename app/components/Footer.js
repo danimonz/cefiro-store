@@ -1,32 +1,41 @@
 export default function Footer() {
   return (
-    <footer className="px-8 py-12 mt-24 border-t" style={{ borderColor: 'rgba(201,168,76,0.12)' }}>
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Wordmark */}
-        <span className="font-display text-xs tracking-[0.4em] text-[#F5F0E8] uppercase opacity-40">
-          Cefiro Studios
-        </span>
+    <footer
+      className="flex items-center justify-between px-8 py-6"
+      style={{ borderTop: '1px solid rgba(0,0,0,0.05)' }}
+    >
+      <span
+        style={{
+          fontWeight: 300,
+          fontSize: '10px',
+          color: 'rgba(26,26,26,0.22)',
+        }}
+      >
+        © 2026 Cefiro Studios
+      </span>
 
-        {/* Ethos */}
-        <p className="text-[10px] tracking-[0.2em] text-[#F5F0E8] opacity-30 uppercase text-center">
-          Learn clearly · Create honestly · Serve locally
-        </p>
-
-        {/* Links */}
-        <div className="flex items-center gap-6">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[10px] tracking-[0.2em] text-[#F5F0E8] opacity-40 hover:opacity-80 hover:text-[#C9A84C] transition-all uppercase"
-          >
-            Instagram
-          </a>
-          <span className="text-[10px] text-[#F5F0E8] opacity-20">
-            © {new Date().getFullYear()}
-          </span>
-        </div>
-      </div>
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        style={{ color: 'rgba(26,26,26,0.22)', lineHeight: 0, display: 'block' }}
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      </a>
     </footer>
   )
 }
