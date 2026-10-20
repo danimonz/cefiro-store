@@ -27,7 +27,7 @@ export default function CartPageClient() {
               fontSize: '10px',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'rgba(26,26,26,0.35)',
+              color: 'rgba(20,23,27,0.35)',
               fontWeight: 400,
               marginBottom: '12px',
             }}
@@ -39,7 +39,7 @@ export default function CartPageClient() {
               fontSize: 'clamp(2rem, 5vw, 3rem)',
               fontWeight: 400,
               letterSpacing: '0.03em',
-              color: '#1a1a1a',
+              color: 'var(--ink)',
               lineHeight: 1.1,
             }}
           >
@@ -55,7 +55,7 @@ export default function CartPageClient() {
               style={{
                 fontSize: '22px',
                 fontWeight: 300,
-                color: 'rgba(26,26,26,0.3)',
+                color: 'rgba(20,23,27,0.3)',
                 marginBottom: '10px',
               }}
             >
@@ -66,7 +66,7 @@ export default function CartPageClient() {
                 fontSize: '10px',
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: 'rgba(26,26,26,0.2)',
+                color: 'rgba(20,23,27,0.2)',
                 fontWeight: 400,
                 marginBottom: '40px',
               }}
@@ -81,8 +81,8 @@ export default function CartPageClient() {
                 fontSize: '11px',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                background: '#1a1a1a',
-                color: '#EFEFEF',
+                background: 'var(--ink)',
+                color: 'var(--bg)',
                 textDecoration: 'none',
                 fontWeight: 400,
               }}
@@ -120,7 +120,7 @@ export default function CartPageClient() {
                     fontSize: '11px',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    color: 'rgba(26,26,26,0.4)',
+                    color: 'rgba(20,23,27,0.4)',
                     fontWeight: 400,
                   }}
                 >
@@ -130,7 +130,7 @@ export default function CartPageClient() {
                   style={{
                     fontSize: '18px',
                     fontWeight: 300,
-                    color: '#1a1a1a',
+                    color: 'var(--ink)',
                   }}
                 >
                   ${subtotal.toFixed(2)}
@@ -139,7 +139,7 @@ export default function CartPageClient() {
               <p
                 style={{
                   fontSize: '10px',
-                  color: 'rgba(26,26,26,0.25)',
+                  color: 'rgba(20,23,27,0.25)',
                   fontWeight: 300,
                   marginBottom: '24px',
                   letterSpacing: '0.02em',
@@ -158,8 +158,8 @@ export default function CartPageClient() {
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
                   fontWeight: 400,
-                  background: 'rgba(26,26,26,0.15)',
-                  color: 'rgba(26,26,26,0.4)',
+                  background: 'rgba(20,23,27,0.15)',
+                  color: 'rgba(20,23,27,0.4)',
                   border: 'none',
                   cursor: 'not-allowed',
                   marginBottom: '16px',
@@ -177,7 +177,7 @@ export default function CartPageClient() {
                   fontSize: '10px',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: 'rgba(26,26,26,0.35)',
+                  color: 'rgba(20,23,27,0.35)',
                   textDecoration: 'none',
                   fontWeight: 400,
                   padding: '10px 0',
@@ -211,7 +211,7 @@ function CartItem({ item, isLast, onRemove, onQtyChange }) {
             position: 'relative',
             width: '72px',
             height: '72px',
-            background: '#E2E2E2',
+            background: 'var(--tile)',
           }}
         >
           <Image
@@ -234,13 +234,13 @@ function CartItem({ item, isLast, onRemove, onQtyChange }) {
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
               fontWeight: 400,
-              color: '#1a1a1a',
+              color: 'var(--ink)',
               textDecoration: 'none',
             }}
           >
             {item.name}
           </Link>
-          <span style={{ fontSize: '12px', fontWeight: 300, color: '#1a1a1a', opacity: 0.6, flexShrink: 0 }}>
+          <span style={{ fontSize: '12px', fontWeight: 300, color: 'var(--ink)', opacity: 0.6, flexShrink: 0 }}>
             ${(item.price * item.qty).toFixed(2)}
           </span>
         </div>
@@ -259,7 +259,7 @@ function CartItem({ item, isLast, onRemove, onQtyChange }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '14px',
-                color: 'rgba(26,26,26,0.5)',
+                color: 'rgba(20,23,27,0.5)',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
@@ -276,7 +276,7 @@ function CartItem({ item, isLast, onRemove, onQtyChange }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '11px',
-                color: '#1a1a1a',
+                color: 'var(--ink)',
                 fontWeight: 400,
               }}
             >
@@ -292,7 +292,7 @@ function CartItem({ item, isLast, onRemove, onQtyChange }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '14px',
-                color: 'rgba(26,26,26,0.5)',
+                color: 'rgba(20,23,27,0.5)',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
@@ -310,7 +310,7 @@ function CartItem({ item, isLast, onRemove, onQtyChange }) {
               fontSize: '9px',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
-              color: 'rgba(26,26,26,0.3)',
+              color: 'rgba(20,23,27,0.3)',
               background: 'none',
               border: 'none',
               cursor: 'pointer',

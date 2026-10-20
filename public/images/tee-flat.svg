@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9ECEF"/>
+      <stop offset="0.72" stop-color="#E1E5E9"/>
+      <stop offset="0.86" stop-color="#D6DBE0"/>
+      <stop offset="1" stop-color="#CED4DA"/>
+    </linearGradient>
+    <radialGradient id="f-shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#14171B" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#14171B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="f-tee" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0E1012"/>
+      <stop offset="0.35" stop-color="#24272B"/>
+      <stop offset="0.7" stop-color="#17191C"/>
+      <stop offset="1" stop-color="#0E1012"/>
+    </linearGradient>
+    <linearGradient id="f-pant" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#AEB5BC"/>
+      <stop offset="0.4" stop-color="#C3C9CF"/>
+      <stop offset="1" stop-color="#AEB5BC"/>
+    </linearGradient>
+    <linearGradient id="f-skin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8E5F45"/>
+      <stop offset="0.45" stop-color="#BD8C6C"/>
+      <stop offset="1" stop-color="#8E5F45"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#f)"/>
+  <ellipse cx="500" cy="895" rx="300" ry="24" fill="url(#f-shadow)"/>
+  <g transform="translate(-550 -290) scale(2.1)">
+    <path d="M455,230 L360,248 Q332,262 326,300 L306,420 L380,430 L382,546 Q500,552 618,546 L620,430 L694,420 L674,300 Q668,262 640,248 L545,230 Q500,262 455,230 Z" fill="url(#f-tee)"/>
+    <path d="M455,230 Q500,268 545,230" fill="none" stroke="#2C3035" stroke-width="5"/>
+    <path d="M455,230 Q500,262 545,230 Q500,240 455,230 Z" fill="#0B0C0E"/>
+    <path d="M380,330 Q384,380 382,430" stroke="#0E1012" stroke-width="2" fill="none"/>
+    <path d="M620,330 Q616,380 620,430" stroke="#0E1012" stroke-width="2" fill="none"/>
+    <path d="M382,538 L618,538" stroke="#0E1012" stroke-width="2"/>
+    <path d="M308,410 L380,420" stroke="#0E1012" stroke-width="2"/>
+    <path d="M620,420 L692,410" stroke="#0E1012" stroke-width="2"/>
+    <circle cx="548" cy="296" r="11" fill="none" stroke="#9AA1A8" stroke-width="1.5"/>
+    <text x="548" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#9AA1A8">CS</text>
+  </g>
+</svg>

@@ -3,9 +3,16 @@
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 @theme inline {
   --font-sans: var(--font-inter);
-  --color-bg:   #EFEFEF;
-  --color-tile: #E2E2E2;
-  --color-text: #1a1a1a;
+  --color-bg:   var(--bg);
+  --color-tile: var(--tile);
+  --color-text: var(--ink);
+}
+
+/* ─── Palette (cool) ────────────────────────────────────────────── */
+:root {
+  --bg:   #ECEEF0;  /* cool off-white */
+  --tile: #DEE2E6;  /* image tiles */
+  --ink:  #14171B;  /* text, buttons */
 }
 
 /* ─── Base Reset ────────────────────────────────────────────────── */
@@ -14,8 +21,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #EFEFEF;
-  color: #1a1a1a;
+  background-color: var(--bg);
+  color: var(--ink);
   font-family: var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,8 +51,41 @@ body {
 
 /* ─── Scrollbar ─────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #EFEFEF; }
+::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.1); border-radius: 2px; }
 
 /* ─── Selection ─────────────────────────────────────────────────── */
-::selection { background: rgba(26, 26, 26, 0.1); color: #1a1a1a; }
+::selection { background: rgba(20,23,27, 0.1); color: var(--ink); }
+
+/* ─── Product gallery ───────────────────────────────────────────── */
+.gallery-main:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+.gallery-thumb {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: var(--tile);
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+.gallery-thumb:hover { opacity: 0.7; }
+.gallery-thumb[data-active="true"] { opacity: 1; box-shadow: inset 0 -1px 0 var(--ink); }
+.gallery-thumb:focus-visible { outline: 1px solid var(--ink); outline-offset: 2px; }
+
+/* ─── Product detail layout ─────────────────────────────────────── */
+.product-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+.product-info { padding-top: 8px; position: sticky; top: 76px; }
+
+@media (max-width: 768px) {
+  .product-detail { grid-template-columns: 1fr; gap: 32px; }
+  .product-info { position: static; padding-top: 0; }
+}

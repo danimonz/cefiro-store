@@ -20,7 +20,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50"
       style={{
         height: '56px',
-        background: scrolled ? 'rgba(239,239,239,0.97)' : '#EFEFEF',
+        background: scrolled ? 'rgba(236,238,240,0.97)' : 'var(--bg)',
         borderBottom: `1px solid ${scrolled ? 'rgba(0,0,0,0.06)' : 'transparent'}`,
         transition: 'background 0.3s ease, border-color 0.3s ease',
       }}
@@ -34,7 +34,7 @@ export default function Navbar() {
             fontWeight: 500,
             fontSize: '18px',
             letterSpacing: '0.16em',
-            color: '#1a1a1a',
+            color: 'var(--ink)',
             textDecoration: 'none',
             textTransform: 'uppercase',
           }}
@@ -68,7 +68,7 @@ function NavLink({ href, children }) {
         fontWeight: 400,
         fontSize: '11px',
         letterSpacing: '0.06em',
-        color: hovered ? '#1a1a1a' : 'rgba(26,26,26,0.45)',
+        color: hovered ? 'var(--ink)' : 'rgba(20,23,27,0.45)',
         textDecoration: 'none',
         transition: 'color 0.25s ease',
       }}

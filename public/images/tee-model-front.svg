@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <linearGradient id="mf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9ECEF"/>
+      <stop offset="0.72" stop-color="#E1E5E9"/>
+      <stop offset="0.86" stop-color="#D6DBE0"/>
+      <stop offset="1" stop-color="#CED4DA"/>
+    </linearGradient>
+    <radialGradient id="mf-shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#14171B" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#14171B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mf-tee" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0E1012"/>
+      <stop offset="0.35" stop-color="#24272B"/>
+      <stop offset="0.7" stop-color="#17191C"/>
+      <stop offset="1" stop-color="#0E1012"/>
+    </linearGradient>
+    <linearGradient id="mf-pant" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#AEB5BC"/>
+      <stop offset="0.4" stop-color="#C3C9CF"/>
+      <stop offset="1" stop-color="#AEB5BC"/>
+    </linearGradient>
+    <linearGradient id="mf-skin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8E5F45"/>
+      <stop offset="0.45" stop-color="#BD8C6C"/>
+      <stop offset="1" stop-color="#8E5F45"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#mf)"/>
+  <ellipse cx="500" cy="928" rx="190" ry="22" fill="url(#mf-shadow)"/>
+  <!-- Wide-leg trousers -->
+  <path d="M386,536 L614,536 L622,600 L646,900 L512,904 L500,640 L488,904 L354,900 L378,600 Z" fill="url(#mf-pant)"/>
+  <path d="M500,560 L500,640" stroke="#AEB5BC" stroke-width="2"/>
+  <path d="M430,620 Q424,760 410,898" stroke="#AEB5BC" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M572,620 Q578,760 592,898" stroke="#AEB5BC" stroke-width="2" fill="none" opacity="0.7"/>
+  <!-- Chunky white shoes -->
+  <path d="M362,896 L488,900 Q494,918 486,930 L352,930 Q326,928 330,912 Q338,898 362,896 Z" fill="#F4F5F6"/>
+  <path d="M340,922 L488,924 L486,932 L350,932 Z" fill="#D5D9DD"/>
+  <path d="M512,900 L638,896 Q662,898 670,912 Q674,928 648,930 L514,930 Q506,918 512,900 Z" fill="#F4F5F6"/>
+  <path d="M512,924 L660,922 L650,932 L514,932 Z" fill="#D5D9DD"/>
+  <path d="M318,410 L376,418 L370,592 Q360,602 348,600 L334,594 Z" fill="url(#mf-skin)"/>
+  <ellipse cx="350" cy="614" rx="20" ry="28" fill="#A9785A"/>
+  <path d="M626,418 L688,410 L676,500 L604,566 L586,540 L640,486 Z" fill="url(#mf-skin)"/>
+  <path d="M584,536 L606,566 L596,576 L578,552 Z" fill="#8E5F45"/>
+  <path d="M572,560 Q590,548 604,566" stroke="#AEB5BC" stroke-width="3" fill="none"/>
+  <path d="M474,182 L526,182 L532,258 L468,258 Z" fill="#8E5F45"/>
+  <path d="M478,196 Q500,214 522,196 L522,206 Q500,224 478,206 Z" fill="#7A5039" opacity="0.5"/>
+  <!-- Oversized heavyweight tee, dropped shoulders -->
+  <path d="M455,230 L360,248 Q332,262 326,300 L306,420 L380,430 L382,546 Q500,552 618,546 L620,430 L694,420 L674,300 Q668,262 640,248 L545,230 Q500,262 455,230 Z" fill="url(#mf-tee)"/>
+  <path d="M380,330 Q384,380 382,430" stroke="#0E1012" stroke-width="3" fill="none"/>
+  <path d="M620,330 Q616,380 620,430" stroke="#0E1012" stroke-width="3" fill="none"/>
+  <path d="M430,440 Q470,470 450,540" stroke="#24272B" stroke-width="3" fill="none" opacity="0.8"/>
+  <path d="M560,420 Q540,480 566,544" stroke="#0E1012" stroke-width="3" fill="none"/>
+  <path d="M382,538 L618,538" stroke="#0E1012" stroke-width="3"/>
+  <path d="M455,230 Q500,268 545,230" fill="none" stroke="#2C3035" stroke-width="6"/>
+  <circle cx="548" cy="296" r="11" fill="none" stroke="#9AA1A8" stroke-width="1.5"/><text x="548" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#9AA1A8">CS</text>
+  <ellipse cx="455" cy="148" rx="7" ry="13" fill="#8E5F45"/>
+  <ellipse cx="545" cy="148" rx="7" ry="13" fill="#8E5F45"/>
+  <ellipse cx="500" cy="144" rx="44" ry="56" fill="#A9785A"/>
+  <ellipse cx="488" cy="128" rx="20" ry="30" fill="#BD8C6C" opacity="0.45"/>
+  <!-- Close crop -->
+  <path d="M456,134 Q454,86 500,84 Q546,86 544,134 Q536,108 500,106 Q464,108 456,134 Z" fill="#1B1714"/>
+  <!-- Deadpan features -->
+  <path d="M473,131 Q482,128 491,131" stroke="#1B1714" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M509,131 Q518,128 527,131" stroke="#1B1714" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="482" cy="143" rx="6" ry="3.5" fill="#EDE6E0"/><circle cx="483" cy="143" r="3" fill="#1E1612"/>
+  <ellipse cx="518" cy="143" rx="6" ry="3.5" fill="#EDE6E0"/><circle cx="519" cy="143" r="3" fill="#1E1612"/>
+  <path d="M475,140 Q482,137 489,140" stroke="#8E5F45" stroke-width="1.5" fill="none"/>
+  <path d="M511,140 Q518,137 525,140" stroke="#8E5F45" stroke-width="1.5" fill="none"/>
+  <path d="M497,148 Q494,162 496,166 Q500,169 506,166" fill="none" stroke="#8E5F45" stroke-width="2" stroke-linecap="round"/>
+  <path d="M489,180 L511,180" stroke="#6E4534" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M492,184 Q500,186 508,184" stroke="#BD8C6C" stroke-width="1.5" fill="none"/>
+</svg>

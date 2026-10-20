@@ -9,14 +9,14 @@ export default function ProductCard({ product }) {
       style={{ textDecoration: 'none' }}
     >
       {/* Square image tile */}
-      <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', background: '#E2E2E2', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', background: 'var(--tile)', overflow: 'hidden' }}>
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 50vw, 33vw"
           className="product-card-img"
-          style={{ objectFit: 'contain', padding: '10%' }}
+          style={product.bleed ? { objectFit: 'cover' } : { objectFit: 'contain', padding: '10%' }}
         />
       </div>
 
@@ -28,7 +28,7 @@ export default function ProductCard({ product }) {
             fontSize: '12px',
             letterSpacing: '0.04em',
             textTransform: 'uppercase',
-            color: '#1a1a1a',
+            color: 'var(--ink)',
             marginBottom: '4px',
           }}
         >
@@ -38,7 +38,7 @@ export default function ProductCard({ product }) {
           style={{
             fontWeight: 300,
             fontSize: '12px',
-            color: '#1a1a1a',
+            color: 'var(--ink)',
             opacity: 0.45,
           }}
         >

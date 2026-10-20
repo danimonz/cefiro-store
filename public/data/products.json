@@ -9,7 +9,7 @@
     "dimensions": "12 × 18 inches",
     "category": "prints",
     "image": "/images/estructura.svg",
-    "images": ["/images/estructura.svg"],
+    "images": ["/images/estructura.svg", "/images/estructura-detail.svg"],
     "featured": true
   },
   {
@@ -21,8 +21,14 @@
     "description": "280gsm heavyweight cotton. Pre-shrunk. Minimal embroidered logo on the chest — small enough to be subtle, deliberate enough to mean something. The kind of shirt you reach for without thinking. Black.",
     "dimensions": "Sizes: S, M, L, XL, XXL",
     "category": "apparel",
-    "image": "/images/tee.svg",
-    "images": ["/images/tee.svg"],
+    "image": "/images/tee-flat.svg",
+    "images": [
+      "/images/tee-model-front.svg",
+      "/images/tee-flat.svg",
+      "/images/tee-model-detail.svg",
+      "/images/tee-model-back.svg"
+    ],
+    "bleed": true,
     "featured": true
   },
   {
@@ -48,7 +54,7 @@
     "dimensions": "18 × 24 inches",
     "category": "prints",
     "image": "/images/lamaquina.svg",
-    "images": ["/images/lamaquina.svg"],
+    "images": ["/images/lamaquina.svg", "/images/lamaquina-detail.svg"],
     "featured": true
   },
   {

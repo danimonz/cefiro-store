@@ -8,7 +8,7 @@ export default function Footer() {
         style={{
           fontWeight: 300,
           fontSize: '10px',
-          color: 'rgba(26,26,26,0.22)',
+          color: 'rgba(20,23,27,0.22)',
         }}
       >
         © 2026 Cefiro Studios
@@ -19,7 +19,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Instagram"
-        style={{ color: 'rgba(26,26,26,0.22)', lineHeight: 0, display: 'block' }}
+        style={{ color: 'rgba(20,23,27,0.22)', lineHeight: 0, display: 'block' }}
       >
         <svg
           width="14"

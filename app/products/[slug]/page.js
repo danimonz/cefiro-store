@@ -1,10 +1,10 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import ProductCard from '../../components/ProductCard'
 import AddToCart from '../../components/AddToCart'
 import FadeIn from '../../components/FadeIn'
+import ProductGallery from '../../components/ProductGallery'
 
 async function getProducts() {
   const filePath = path.join(process.cwd(), 'public', 'data', 'products.json')
@@ -44,38 +44,18 @@ export default async function ProductPage({ params }) {
 
       {/* ── Product detail ───────────────────────────────────── */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 32px' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '60px',
-            alignItems: 'start',
-          }}
-        >
-          {/* Left: image */}
+        <div className="product-detail">
+          {/* Left: images */}
           <FadeIn>
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                paddingBottom: '100%',
-                background: '#E2E2E2',
-                overflow: 'hidden',
-              }}
-            >
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: 'contain', padding: '10%' }}
-                priority
-              />
-            </div>
+            <ProductGallery
+              images={product.images?.length ? product.images : [product.image]}
+              alt={product.name}
+              bleed={product.bleed}
+            />
           </FadeIn>
 
           {/* Right: info */}
-          <div style={{ paddingTop: '8px', position: 'sticky', top: '76px' }}>
+          <div className="product-info">
 
             {/* Category */}
             <FadeIn>
@@ -84,7 +64,7 @@ export default async function ProductPage({ params }) {
                   fontSize: '10px',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: 'rgba(26,26,26,0.45)',
+                  color: 'rgba(20,23,27,0.45)',
                   marginBottom: '16px',
                   fontWeight: 400,
                 }}
@@ -100,7 +80,7 @@ export default async function ProductPage({ params }) {
                   fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
                   fontWeight: 400,
                   letterSpacing: '0.03em',
-                  color: '#1a1a1a',
+                  color: 'var(--ink)',
                   lineHeight: 1.2,
                   marginBottom: '20px',
                 }}
@@ -115,7 +95,7 @@ export default async function ProductPage({ params }) {
                 style={{
                   fontSize: '15px',
                   fontWeight: 300,
-                  color: '#1a1a1a',
+                  color: 'var(--ink)',
                   opacity: 0.6,
                   marginBottom: '28px',
                 }}
@@ -133,7 +113,7 @@ export default async function ProductPage({ params }) {
                 style={{
                   fontSize: '13px',
                   lineHeight: 1.8,
-                  color: '#1a1a1a',
+                  color: 'var(--ink)',
                   opacity: 0.6,
                   marginBottom: '28px',
                   fontWeight: 300,
@@ -151,7 +131,7 @@ export default async function ProductPage({ params }) {
                     fontSize: '10px',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
-                    color: 'rgba(26,26,26,0.35)',
+                    color: 'rgba(20,23,27,0.35)',
                     fontWeight: 400,
                     paddingBottom: '24px',
                     borderBottom: '1px solid rgba(0,0,0,0.06)',
@@ -174,7 +154,7 @@ export default async function ProductPage({ params }) {
                 style={{
                   fontSize: '10px',
                   textAlign: 'center',
-                  color: 'rgba(26,26,26,0.22)',
+                  color: 'rgba(20,23,27,0.22)',
                   marginTop: '12px',
                   fontWeight: 300,
                   letterSpacing: '0.04em',
@@ -202,7 +182,7 @@ export default async function ProductPage({ params }) {
               fontSize: '10px',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'rgba(26,26,26,0.35)',
+              color: 'rgba(20,23,27,0.35)',
               fontWeight: 400,
               marginBottom: '24px',
               paddingTop: '40px',
